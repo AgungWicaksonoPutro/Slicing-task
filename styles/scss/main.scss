@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import "mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: rgb(37,42,64);
+    font-family: 'Rubik', sans-serif;
+    .dots1{
+        position: absolute;
+        top: -10px;
+        left: 45%;
+        width: 100px;
+        height: 100px;
+        img{
+            @include imageStyle;
+            opacity: 0.3;
+        }
+    }
+    .dots2{
+        position: absolute;
+        bottom: -20px;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+        img{
+            @include imageStyle;
+            opacity: 0.3;
+        }
+    }
+}
+
+/*Nav Area */
+nav{
+    position: absolute;
+    z-index: 9999;
+    top: 25px;
+    left: 25px;
+    .btn{
+        width: 2rem;
+        height: 2rem;
+        padding: 2px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: rgba(189, 189, 189, 0.295);
+        .rectangle1{
+            position: relative;
+            left: 14px;
+            width: 30%;
+            @include rectangle;
+        }
+        .rectangle2{
+            @include rectangle;
+        }
+        .rectangle3{
+            width: 30%;
+            @include rectangle;
+        }
+    }
+}
+
+
+/* Main Area */
+main{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Section Area */
+
+.left-section{
+    flex-basis: 50%;
+    padding-left: 100px;
+    padding-top: 60px;
+    h1{
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+    p{
+        font-weight: 300;
+        color: rgb(112, 112, 112);
+        margin-bottom: 30px;
+    }
+    .form-group{
+        position: relative;
+        width: 65%;
+        label{
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            color: rgb(240, 240, 240);
+            font-size: 14px;
+        }
+        input{
+            width: 100%;
+            height: 2.5rem;
+            background-color: rgb(184, 179, 179);
+            border-radius: 15px;
+            border: none;
+            padding: 10px 10px 10px 35px;
+            opacity: 0.3;
+            margin-bottom: 45px;
+            &:focus{
+                outline: none;
+            }
+        }
+        ::placeholder{
+            color: #fff;
+        }
+    }
+    h4{
+        color: #fff;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        span{
+            font-size: 12px;
+            color:  rgb(112, 112, 112);
+        }
+    }
+    .project-list{
+        width: 65%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .project{
+            margin: 10px;
+            cursor: pointer;
+            .img-container{
+                width: 80px;
+                width: 80px;
+                border-radius: 20px;
+                position: relative;
+                margin-bottom: 5px;
+                img{
+                    @include imageStyle;
+                }
+                h3{
+                    @include initial;
+                }
+                .mark{
+                    position: absolute;
+                    top: -0.2em;
+                    right: -0.2em;
+                    width: 0.8em;
+                    height: 0.8em;
+                    background-color: rgb(233, 233, 233);
+                    border-radius: 50%;
+                    border: 2px solid rgb(0, 0, 0);
+                }
+                .active{
+                    padding: 5px;
+                    border: 2px solid #fff;
+                }
+            }
+            .etc{
+                width: 80px;
+                height: 80px;
+                border-radius: 15px;
+                background-color: rgba(255, 255, 255, 0.137);
+                position: relative;
+                h3{
+                    @include initial;
+                }
+            }
+            h6{
+                text-align: center;
+                color:  rgb(112, 112, 112);
+            }
+        }
+    }
+}
+
+
+/* Right Section */
+
+.right-section{
+    flex-basis: 50%;
+    position: relative;
+    right: 1em;
+    top: 1em;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px 30px;
+    .head-section{
+        display: flex;
+        margin-bottom: 3em;
+        .title{
+            flex-basis: 70%;
+            h1{
+                font-weight: 500;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-weight: 200;
+                color: rgb(112, 112, 112);
+            }
+        }
+        .user{
+            flex-basis: 30%;
+            display: flex;
+            padding-left: 3em;
+            .img-container{
+                position: relative;
+                @include img-container-user;
+                img{
+                    @include imageStyle;
+                }
+                &:nth-child(1){
+                    z-index: 10;
+                    left: 15px;
+                }
+                &:nth-child(2){
+                    z-index: 9;
+                    left: 10px;
+                }
+                &:nth-child(3){
+                    z-index: 8;
+                    left: 5px;
+                }
+            }
+            .etc-user{
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 10px;
+                border-radius: 50%;
+                background-color: #fff;
+                color:  rgb(202, 202, 202);
+                border: 0.15em solid rgb(202, 202, 202);
+            }
+        }
+    }
+    .plan{
+        display: flex;
+        margin-bottom: 0.5em;
+        .time{
+            flex-basis: 50%;
+            h3{
+                font-weight: 400;
+            }
+        }
+        .nav-plan{
+            text-align: right;
+            flex-basis: 50%;
+            margin-right: 5px;
+            color: rgb(196, 196, 196);
+        }
+    }
+    hr{
+        background-color:  rgb(196, 196, 196);
+        border: 0.01em solid  rgb(196, 196, 196);
+    }
+    .task-list{
+        margin-top: 20px;
+        width: 100%;
+        .nav-item{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .form-group{
+                width: 10%;
+                margin-left: 5px;
+                input[type="checkbox"]{
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    background: #36D9D8;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -o-appearance: none;
+                    appearance: none;
+                }
+                :focus{
+                    outline: none;
+                }
+                ::after{
+                    color:#fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                :checked::after{
+                    height: 20px;
+                    width: 20px;
+                    content: '✓';
+                }
+            }
+            p{
+                width: 70%;
+                font-weight: 200;
+            }
+            .status{
+                width: 20%;
+                text-align: center;
+            }
+            .Approved{
+                @include status(#00ccc2, #b7fffb);
+            }
+            .Progress{
+                @include status(#2682ec,#bedcff)
+            }
+            .Review{
+                @include status(#fd7038,#ffe0d4)
+            }
+            .Waiting{
+                @include status(#5c6874, #dae4ee)
+            }
+        }
+    }
+    .add-data{
+        box-sizing: border-box;
+        margin-top: 5rem;
+        position: relative;
+        .btn{
+            float: right;
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            border: none;
+            background-color: #894FC6;
+            color: #fff;
+            box-shadow: -21px 19px 44px 3px rgba(137,79,198,0.87);
+            &:hover{
+                background-color: #7c3ac4;
+            }
+            &:focus{
+                outline: none;
+            }
+    }
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px){
+    
+}
+@media (max-width: 768px){
+    .left-section{
+        flex-basis: 100%;
+        .project-list{
+            width: 55%;
+        }
+        .form-group{
+            width: 55%;
+        }
+    }
+    .right-section{
+        margin: 10px;
+        flex-basis: 100%;
+        top: 0;
+        right: 0;
+        .nav-item{
+            p{
+                font-size: 18px;
+            }
+            .status{
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media (max-width: 550px){
+    .left-section{
+        padding-left: 60px;
+        flex-basis: 100%;
+        .project-list{
+            width: 80%;
+        }
+        .form-group{
+            width: 80%;
+        }
+    }
+    .right-section{
+        .head-section{
+            flex-wrap: wrap-reverse;
+            .user{
+                justify-content: flex-end;
+                flex-basis: 100%;
+                padding-left: 0;
+            }
+        }
+        .nav-item{
+            p{
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .status{
+                font-size: 10px;
+            }
+        }
+    }
+}
